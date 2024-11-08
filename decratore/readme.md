@@ -21,11 +21,35 @@ function log(constructor: Function) {
     console.log(`${constructor} Decorator Invoked`);
 }
 ```
-- ### method:
+
+### method:
     applied to method property for observing, modifying, or replacing method defination
-- ### property:
+
+**Implementation:**
+
+```typescript
+function log(target: Object,propertyKey: string,descriptor: propertyDescriptor) {
+    console.log(`Method Invoked`);
+}    
+```
+### property:
     can be only leverage to observe that property has been declared for a class
-- ### parameter:
+
+**Implementation:**
+
+```typescript
+function log(target: Object,propertyKey: string) {
+    console.log(`${propertyKey} Decrator Invoked`);
+} 
+```
+
+### parameter:
     applied to method declaration for observing that parameters had been defined on a method.
 
+**Implementation:**
 
+```typescript
+function log(target: Object,propertyKey: string,index: number) {
+    console.log(`${propertyKey} Decrator ${index} Invoked`);
+} 
+```
